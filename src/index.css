@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  @apply h-full;
+}
+
+body {
+  @apply bg-gradient-to-tr from-sky-400 to-violet-400;
+}
+
+.nav-item.active {
+  @apply bg-slate-50/30 text-slate-900 ring-1 ring-slate-200;
+}
+
+.nav-item:not(.active) {
+  @apply text-slate-500 transition-colors hover:bg-slate-50/30;
+}
