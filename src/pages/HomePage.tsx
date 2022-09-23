@@ -1,7 +1,9 @@
+import { useAuthStateProvider } from "@/providers/AuthProvider";
 import { Card } from "@components/Card";
 import { Component } from "solid-js";
 
 const HomePage: Component = () => {
+  const { currentUser } = useAuthStateProvider();
   return (
     <>
       <div class="flex flex-row flex-wrap justify-center gap-4">
@@ -10,6 +12,7 @@ const HomePage: Component = () => {
         <Card />
         <Card />
       </div>
+      <div>{currentUser?.name}</div>
     </>
   );
 };
