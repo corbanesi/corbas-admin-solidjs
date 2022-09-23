@@ -1,3 +1,4 @@
+import { RoutesEnum } from "@/routes";
 import { useLogin } from "@composables/auth/useLogin";
 import { useAuthStateProvider } from "@providers/AuthProvider";
 import { useNavigate } from "@solidjs/router";
@@ -16,7 +17,7 @@ const SignInPage: Component = () => {
 
   onMount(() => {
     if (authStateProvider.isAuthenticated) {
-      navigate("/", { replace: true });
+      navigate(RoutesEnum.HOME_PAGE, { replace: true });
     }
   });
 

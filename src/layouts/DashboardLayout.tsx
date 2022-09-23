@@ -2,6 +2,7 @@ import { NavBar } from "@components/NavBar";
 import { useAuthStateProvider } from "@providers/AuthProvider";
 import { Outlet, useNavigate } from "@solidjs/router";
 import { onMount, ParentComponent } from "solid-js";
+import { RoutesEnum } from "@/routes";
 
 const DashboardLayout: ParentComponent = (props) => {
   const authProvider = useAuthStateProvider();
@@ -9,7 +10,7 @@ const DashboardLayout: ParentComponent = (props) => {
 
   onMount(() => {
     if (!authProvider.isAuthenticated) {
-      navigate("/signin");
+      navigate(RoutesEnum.SIGN_IN_PAGE);
     }
   });
 

@@ -1,3 +1,4 @@
+import { RoutesEnum } from "@/routes";
 import { useLogout } from "@composables/auth/useLogout";
 import { NavLink } from "@solidjs/router";
 import {
@@ -15,9 +16,8 @@ type NavItemType = {
 };
 
 const navItems: NavItemType[] = [
-  { link: "/", label: "Dashboard" },
-  { link: "/about", label: "About" },
-  { link: "/projects", label: "Projects" },
+  { link: RoutesEnum.HOME_PAGE, label: "Dashboard" },
+  { link: RoutesEnum.ABOUT_PAGE, label: "About" },
 ];
 
 export const NavBar: Component = () => {
@@ -63,6 +63,7 @@ export const NavBar: Component = () => {
                     <NavLink
                       href={navItem.link}
                       class="nav-item rounded-md px-3 py-2 text-sm font-medium"
+                      end
                     >
                       {navItem.label}
                     </NavLink>

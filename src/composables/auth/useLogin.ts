@@ -1,5 +1,6 @@
 import { useAuthEventProvider } from "@providers/AuthProvider";
 import { useNavigate } from "@solidjs/router";
+import { RoutesEnum } from "@/routes";
 import { createSignal } from "solid-js";
 
 export const useLogin = () => {
@@ -11,7 +12,7 @@ export const useLogin = () => {
     try {
       setLoading(true);
       setCurrentUser(email);
-      navigate("/", { replace: true });
+      navigate(RoutesEnum.HOME_PAGE, { replace: true });
     } catch (error) {
       console.error(error);
     } finally {
