@@ -1,3 +1,6 @@
+import { CorbasButton } from "@/components/atomic/CorbasButton";
+import { LoadingIcon } from "@/components/icons/LoadingIcon";
+import { LockIcon } from "@/components/icons/LockIcon";
 import { RoutesEnum } from "@/routes";
 import { useLogin } from "@composables/auth/useLogin";
 import { useAuthStateProvider } from "@providers/AuthProvider";
@@ -8,7 +11,7 @@ import { createStore } from "solid-js/store";
 const SignInPage: Component = () => {
   const authStateProvider = useAuthStateProvider();
   const navigate = useNavigate();
-  const { doLogin } = useLogin();
+  const { isLoading, doLogin } = useLogin();
 
   const [form, setForm] = createStore({
     email: "",
@@ -70,12 +73,13 @@ const SignInPage: Component = () => {
               />
             </div>
             <div>
-              <button
-                type="submit"
-                class="w-full justify-center rounded-md border py-2 px-4"
+              <CorbasButton
+                isLoading={isLoading()}
+                icon={isLoading() ? <LoadingIcon /> : <LockIcon />}
+                full
               >
-                Sign In
-              </button>
+                Sign in
+              </CorbasButton>
             </div>
           </form>
         </div>

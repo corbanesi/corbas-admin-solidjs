@@ -1,3 +1,4 @@
+import { useAuthStateProvider } from "@/providers/AuthProvider";
 import { RoutesEnum } from "@/routes";
 import { useLogout } from "@composables/auth/useLogout";
 import { NavLink } from "@solidjs/router";
@@ -22,6 +23,7 @@ const navItems: NavItemType[] = [
 
 export const NavBar: Component = () => {
   const [open, setOpen] = createSignal(false);
+  const { currentUser } = useAuthStateProvider();
 
   const { doLogout } = useLogout();
 
@@ -123,6 +125,9 @@ export const NavBar: Component = () => {
                     aria-labelledby="user-menu-button"
                     tabindex="-1"
                   >
+                    <div class="block border-b px-4 py-2 text-sm text-gray-700">
+                      Hello, {currentUser?.name}!
+                    </div>
                     <a
                       href="#"
                       class="block px-4 py-2 text-sm text-gray-700"

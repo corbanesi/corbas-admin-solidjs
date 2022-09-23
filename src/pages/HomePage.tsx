@@ -12,7 +12,6 @@ const HomePage: Component = () => {
         <Card />
         <Card />
       </div>
-      <div>{currentUser?.name}</div>
     </>
   );
 };

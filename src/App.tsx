@@ -2,12 +2,14 @@ import { AuthProvider } from "@providers/AuthProvider";
 import { useRoutes } from "@solidjs/router";
 import type { VoidComponent } from "solid-js";
 import { routes } from "./routes";
+import { Toaster } from "solid-toast";
 
 const App: VoidComponent = () => {
   const Routes = useRoutes(routes);
   return (
     <AuthProvider>
       <Routes />
+      <Toaster />
     </AuthProvider>
   );
 };
