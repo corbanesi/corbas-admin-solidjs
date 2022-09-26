@@ -5,11 +5,11 @@ import { onMount, ParentComponent } from "solid-js";
 import { RoutesEnum } from "@/routes";
 
 const DashboardLayout: ParentComponent = (props) => {
-  const authProvider = useAuthStateProvider();
+  const authState = useAuthStateProvider();
   const navigate = useNavigate();
 
   onMount(() => {
-    if (!authProvider.isAuthenticated) {
+    if (!authState.isAuthenticated) {
       navigate(RoutesEnum.SIGN_IN_PAGE);
     }
   });

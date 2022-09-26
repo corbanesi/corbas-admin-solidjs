@@ -6,7 +6,7 @@ export const server = async <T>(
 ): Promise<T> => {
   const response = await fetch(`${API_URL}${input}`, {
     ...init,
-    credentials: "include"
+    credentials: "include",
   });
   if (!response.ok) {
     throw new Error(response.statusText);

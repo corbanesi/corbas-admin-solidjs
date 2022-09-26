@@ -13,7 +13,7 @@ export const CorbasButton: Component<CorbasButtonType> = (props) => {
       disabled={props.disabled}
       type="submit"
       classList={{ "w-full": props.full }}
-      class="transition-colors hover:bg-indigo-700 focus:outline-none relative flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      class="relative flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white transition-colors hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
     >
       <Show when={props.icon}>
         <span

@@ -9,7 +9,7 @@ import { Component, onMount } from "solid-js";
 import { createStore } from "solid-js/store";
 
 const SignInPage: Component = () => {
-  const authStateProvider = useAuthStateProvider();
+  const authState = useAuthStateProvider();
   const navigate = useNavigate();
   const { isLoading, doLogin } = useLogin();
 
@@ -19,7 +19,7 @@ const SignInPage: Component = () => {
   });
 
   onMount(() => {
-    if (authStateProvider.isAuthenticated) {
+    if (authState.isAuthenticated) {
       navigate(RoutesEnum.HOME_PAGE, { replace: true });
     }
   });
