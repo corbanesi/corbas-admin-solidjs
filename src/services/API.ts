@@ -4,7 +4,10 @@ export const server = async <T>(
   input: `/${string}`,
   init?: RequestInit
 ): Promise<T> => {
-  const response = await fetch(`${API_URL}${input}`, init);
+  const response = await fetch(`${API_URL}${input}`, {
+    ...init,
+    credentials: "include"
+  });
   if (!response.ok) {
     throw new Error(response.statusText);
   }

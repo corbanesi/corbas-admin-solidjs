@@ -19,11 +19,11 @@ export const useLogin = () => {
       const currentUserResponse = await apiCurrentUser();
       setCurrentUser(currentUserResponse);
 
-      toast.success("Successfully logged in", { position: "top-center" });
+      toast.success("Successfully logged in", { position: "top-right" });
       navigate(RoutesEnum.HOME_PAGE, { replace: true });
     } catch (error) {
       if (error instanceof Error) {
-        toast.error(error.message, { position: "top-center" });
+        toast.error(error.message, { position: "top-right" });
       }
     } finally {
       setLoading(false);
