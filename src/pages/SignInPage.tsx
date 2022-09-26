@@ -1,6 +1,5 @@
-import { CorbasButton } from "@/components/atomic/CorbasButton";
-import { LoadingIcon } from "@/components/icons/LoadingIcon";
-import { LockIcon } from "@/components/icons/LockIcon";
+import { CorbasButton, CorbasInput } from "@/components/atomic";
+import { LoadingIcon, LockIcon } from "@/components/icons";
 import { RoutesEnum } from "@/routes";
 import { useLogin } from "@composables/auth/useLogin";
 import { useAuthStateProvider } from "@providers/AuthProvider";
@@ -43,32 +42,26 @@ const SignInPage: Component = () => {
               Account sign in
             </h1>
           </div>
-          <form class="space-y-4" onsubmit={handleSignIn}>
+          <form class="space-y-4" onSubmit={handleSignIn}>
             <div class="space-y-4">
-              <label for="email" class="sr-only">
-                E-mail address
-              </label>
-              <input
+              <CorbasInput
+                label="E-mail address"
                 type="email"
                 name="email"
                 id="email"
                 placeholder="E-mail address"
                 required
-                class=" block w-full appearance-none rounded-lg border text-slate-500"
                 onInput={(e) => setForm("email", e.currentTarget.value)}
               />
             </div>
             <div class="space-y-4">
-              <label for="password" class="sr-only">
-                Password
-              </label>
-              <input
+              <CorbasInput
+                label="Password"
                 type="password"
                 name="password"
                 id="password"
                 placeholder="Password"
                 required
-                class=" block w-full appearance-none rounded-lg border text-slate-500"
                 onInput={(e) => setForm("password", e.currentTarget.value)}
               />
             </div>

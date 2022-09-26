@@ -1,6 +1,6 @@
 import { VoidComponent } from "solid-js";
 
-export const LoadingIcon: VoidComponent = () => {
+const LoadingIcon: VoidComponent = () => {
   return (
     <svg
       class="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
@@ -24,3 +24,5 @@ export const LoadingIcon: VoidComponent = () => {
     </svg>
   );
 };
+
+export default LoadingIcon;

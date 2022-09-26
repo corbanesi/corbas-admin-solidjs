@@ -7,7 +7,7 @@ type CorbasButtonType = ParentProps & {
   full?: boolean;
 };
 
-export const CorbasButton: Component<CorbasButtonType> = (props) => {
+const CorbasButton: Component<CorbasButtonType> = (props) => {
   return (
     <button
       disabled={props.disabled}
@@ -27,3 +27,5 @@ export const CorbasButton: Component<CorbasButtonType> = (props) => {
     </button>
   );
 };
+
+export default CorbasButton;

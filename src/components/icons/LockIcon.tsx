@@ -1,6 +1,6 @@
 import { VoidComponent } from "solid-js";
 
-export const LockIcon: VoidComponent = () => {
+const LockIcon: VoidComponent = () => {
   return (
     <svg
       class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400"
@@ -17,3 +17,5 @@ export const LockIcon: VoidComponent = () => {
     </svg>
   );
 };
+
+export default LockIcon;
