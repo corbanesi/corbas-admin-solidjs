@@ -23,7 +23,7 @@ const navItems: NavItemType[] = [
 
 export const CorbasNavBar: Component = () => {
   const [open, setOpen] = createSignal(false);
-  const { currentUser } = useAuthStateProvider();
+  const authState = useAuthStateProvider();
 
   const { doLogout } = useLogout();
 
@@ -126,7 +126,7 @@ export const CorbasNavBar: Component = () => {
                     tabindex="-1"
                   >
                     <div class="block border-b px-4 py-2 text-sm text-gray-700">
-                      Hello, {currentUser?.name}!
+                      Hello, {authState.currentUser?.name}!
                     </div>
                     <a
                       href="#"
