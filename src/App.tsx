@@ -1,4 +1,4 @@
-import { AuthProvider } from "@providers/AuthProvider";
+import { AuthProvider } from "@/providers/auth.provider";
 import { useRoutes } from "@solidjs/router";
 import type { VoidComponent } from "solid-js";
 import { routes } from "./routes";

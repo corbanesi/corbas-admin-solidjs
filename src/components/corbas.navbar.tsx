@@ -1,4 +1,4 @@
-import { useAuthStateProvider } from "@/providers/AuthProvider";
+import { useAuthStateProvider } from "@/providers/auth.provider";
 import { RoutesEnum } from "@/routes";
 import { useLogout } from "@composables/auth/useLogout";
 import { NavLink } from "@solidjs/router";
@@ -21,7 +21,7 @@ const navItems: NavItemType[] = [
   { link: RoutesEnum.ABOUT_PAGE, label: "About" },
 ];
 
-export const NavBar: Component = () => {
+export const CorbasNavBar: Component = () => {
   const [open, setOpen] = createSignal(false);
   const { currentUser } = useAuthStateProvider();
 

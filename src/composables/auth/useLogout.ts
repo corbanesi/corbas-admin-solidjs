@@ -1,5 +1,5 @@
 import { RoutesEnum } from "@/routes";
-import { useAuthEventProvider } from "@providers/AuthProvider";
+import { useAuthEventProvider } from "@/providers/auth.provider";
 import { useNavigate } from "@solidjs/router";
 
 export const useLogout = () => {

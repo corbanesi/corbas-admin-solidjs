@@ -10,21 +10,24 @@ export enum RoutesEnum {
 export const routes = [
   {
     path: RoutesEnum.SIGN_IN_PAGE,
-    component: lazy(() => import("./pages/SignInPage")),
+    component: lazy(() => import("./pages/signIn.page")),
   },
   {
     path: RoutesEnum.HOME_PAGE,
-    component: lazy(() => import("./layouts/DashboardLayout")),
+    component: lazy(() => import("./layouts/dashboard.layout")),
     children: [
-      { path: "/", component: lazy(() => import("./pages/HomePage")) },
+      {
+        path: "/",
+        component: lazy(() => import("./pages/dashboard/home.page")),
+      },
       {
         path: RoutesEnum.ABOUT_PAGE,
-        component: lazy(() => import("./pages/AboutPage")),
+        component: lazy(() => import("./pages/dashboard/about.page")),
       },
     ],
   },
   {
     path: RoutesEnum.NOT_FOUND,
-    component: lazy(() => import("./pages/NotFound")),
+    component: lazy(() => import("./pages/notFound.page")),
   },
 ];

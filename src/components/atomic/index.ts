@@ -1,2 +1,2 @@
-export { default as CorbasButton } from "./CorbasButton";
-export { default as CorbasInput } from "./CorbasInput";
+export { default as CorbasButton } from "./corbas.button";
+export { default as CorbasInput } from "./corbas.input";

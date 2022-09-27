@@ -2,7 +2,7 @@ import { CorbasButton, CorbasInput } from "@/components/atomic";
 import { LoadingIcon, LockIcon } from "@/components/icons";
 import { RoutesEnum } from "@/routes";
 import { useLogin } from "@composables/auth/useLogin";
-import { useAuthStateProvider } from "@providers/AuthProvider";
+import { useAuthStateProvider } from "@/providers/auth.provider";
 import { useNavigate } from "@solidjs/router";
 import { Component, onMount } from "solid-js";
 import { createStore } from "solid-js/store";

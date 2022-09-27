@@ -1,4 +1,4 @@
-import { server } from "./API";
+import { server } from "./api.service";
 
 export const apiSignIn = async (email: string, password: string) => {
   return await server<SignInResponse>("/signin", {
