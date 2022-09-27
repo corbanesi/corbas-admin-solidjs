@@ -6,6 +6,9 @@ export const server = async <T>(
 ): Promise<T> => {
   const response = await fetch(`${API_URL}${input}`, {
     ...init,
+    headers: {
+      "Content-Type": "application/json",
+    },
     credentials: "include",
   });
   if (!response.ok) {

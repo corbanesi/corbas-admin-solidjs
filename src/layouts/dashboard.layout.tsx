@@ -1,16 +1,26 @@
 import { CorbasNavBar } from "@/components/corbas.navbar";
-import { useAuthStateProvider } from "@/providers/auth.provider";
+import {
+  useAuthEventProvider,
+  useAuthStateProvider,
+} from "@/providers/auth.provider";
 import { Outlet, useNavigate } from "@solidjs/router";
 import { onMount, ParentComponent } from "solid-js";
 import { RoutesEnum } from "@/routes";
+import { apiCurrentUser } from "@/services/auth.service";
 
 const DashboardLayout: ParentComponent = (props) => {
   const authState = useAuthStateProvider();
+  const authEvent = useAuthEventProvider();
   const navigate = useNavigate();
 
-  onMount(() => {
+  onMount(async () => {
     if (!authState.isAuthenticated) {
-      navigate(RoutesEnum.SIGN_IN_PAGE);
+      try {
+        const currentUserResponse = await apiCurrentUser();
+        authEvent.setCurrentUser(currentUserResponse);
+      } catch {
+        navigate(RoutesEnum.SIGN_IN_PAGE);
+      }
     }
   });
 
