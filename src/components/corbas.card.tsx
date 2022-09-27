@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import CheckmarkIcon from "./icons/checkmar.icon";
+import { CheckmarkIcon } from "./icons";
 
 export const CorbasCard: Component = () => {
   return (
