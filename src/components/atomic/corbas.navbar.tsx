@@ -21,7 +21,7 @@ const navItems: NavItemType[] = [
   { link: RoutesEnum.ABOUT_PAGE, label: "About" },
 ];
 
-export const CorbasNavBar: Component = () => {
+const CorbasNavbar: Component = () => {
   const [open, setOpen] = createSignal(false);
   const authState = useAuthStateProvider();
 
@@ -288,3 +288,5 @@ export const CorbasNavBar: Component = () => {
     </nav>
   );
 };
+
+export default CorbasNavbar;

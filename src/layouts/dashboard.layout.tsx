@@ -1,4 +1,3 @@
-import { CorbasNavBar } from "@/components/corbas.navbar";
 import {
   useAuthEventProvider,
   useAuthStateProvider,
@@ -7,6 +6,7 @@ import { Outlet, useNavigate } from "@solidjs/router";
 import { onMount, ParentComponent } from "solid-js";
 import { RoutesEnum } from "@/routes";
 import { apiCurrentUser } from "@/services/auth.service";
+import { CorbasNavbar } from "@/components/atomic";
 
 const DashboardLayout: ParentComponent = (props) => {
   const authState = useAuthStateProvider();
@@ -27,7 +27,7 @@ const DashboardLayout: ParentComponent = (props) => {
   return (
     <div class="h-full md:py-4">
       <div class="container mx-auto h-full rounded-lg border bg-slate-200/30 shadow-xl">
-        <CorbasNavBar />
+        <CorbasNavbar />
         <Outlet />
       </div>
     </div>

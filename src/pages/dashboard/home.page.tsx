@@ -1,4 +1,4 @@
-import { CorbasCard } from "@/components/corbas.card";
+import { CorbasCard } from "@/components/atomic";
 import { Component } from "solid-js";
 
 const HomePage: Component = () => {
