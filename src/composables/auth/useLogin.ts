@@ -6,9 +6,9 @@ import { apiCurrentUser, apiSignIn } from "@/services/auth.service";
 import toast from "solid-toast";
 
 export const useLogin = () => {
-  const navigate = useNavigate();
   const [isLoading, setLoading] = createSignal(false);
   const authEvent = useAuthEventProvider();
+  const navigate = useNavigate();
 
   const doLogin = async (email: string, password: string) => {
     try {
