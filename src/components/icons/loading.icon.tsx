@@ -1,9 +1,14 @@
 import { VoidComponent } from "solid-js";
 
-const LoadingIcon: VoidComponent = () => {
+type LoadingIconProps = {
+  width: number;
+  height: number;
+};
+
+const LoadingIcon: VoidComponent<LoadingIconProps> = (props) => {
   return (
     <svg
-      class="-ml-1 mr-3 h-5 w-5 animate-spin text-white"
+      class={`-ml-1 mr-3 animate-spin text-white h-${props.height} w-${props.width}`}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
