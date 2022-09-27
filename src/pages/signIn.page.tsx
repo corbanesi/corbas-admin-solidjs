@@ -68,13 +68,7 @@ const SignInPage: Component = () => {
             <div>
               <CorbasButton
                 isLoading={isLoading()}
-                icon={
-                  isLoading() ? (
-                    <LoadingIcon width={5} height={5} />
-                  ) : (
-                    <LockIcon width={5} height={5} />
-                  )
-                }
+                icon={isLoading() ? <LoadingIcon /> : <LockIcon />}
                 full
               >
                 Sign in

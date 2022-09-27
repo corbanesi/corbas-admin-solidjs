@@ -8,7 +8,7 @@ import toast from "solid-toast";
 export const useLogin = () => {
   const navigate = useNavigate();
   const [isLoading, setLoading] = createSignal(false);
-  const { setCurrentUser } = useAuthEventProvider();
+  const authEvent = useAuthEventProvider();
 
   const doLogin = async (email: string, password: string) => {
     try {
@@ -17,7 +17,7 @@ export const useLogin = () => {
       await apiSignIn(email, password);
 
       const currentUserResponse = await apiCurrentUser();
-      setCurrentUser(currentUserResponse);
+      authEvent.setCurrentUser(currentUserResponse);
 
       toast.success("Successfully logged in", { position: "top-right" });
       navigate(RoutesEnum.HOME_PAGE, { replace: true });

@@ -4,10 +4,10 @@ import { useNavigate } from "@solidjs/router";
 
 export const useLogout = () => {
   const navigate = useNavigate();
-  const { removeCurrentUser } = useAuthEventProvider();
+  const authEvent = useAuthEventProvider();
 
   const doLogout = () => {
-    removeCurrentUser();
+    authEvent.removeCurrentUser();
     navigate(RoutesEnum.SIGN_IN_PAGE, { replace: true });
   };
 
