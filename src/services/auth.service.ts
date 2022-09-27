@@ -1,14 +1,14 @@
 import { server } from "./api.service";
 
 export const apiSignIn = async (email: string, password: string) => {
-  return await server<SignInResponse>("/signin", {
+  await server("/signin", {
     method: "POST",
     body: JSON.stringify({ email, password }),
   });
 };
 
 export const apiSignOut = async () => {
-  return await server("/signout", {
+  await server("/signout", {
     method: "POST",
   });
 };
