@@ -8,7 +8,7 @@ const fetchPeople = async (): Promise<User[]> => {
 };
 
 const HomePage: Component = () => {
-  const [data, {}] = createResource(fetchPeople);
+  const [data, { mutate }] = createResource(fetchPeople);
 
   return (
     <>
