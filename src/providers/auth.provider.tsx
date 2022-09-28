@@ -3,11 +3,11 @@ import { createStore } from "solid-js/store";
 
 interface IAuthStateContext {
   isAuthenticated: boolean;
-  currentUser: User | null;
+  currentUser: CurrentUser | null;
 }
 
 interface IAuthEventContext {
-  setCurrentUser: (user: User) => void;
+  setCurrentUser: (user: CurrentUser) => void;
   removeCurrentUser: () => void;
 }
 
@@ -25,7 +25,7 @@ export const AuthProvider: ParentComponent = (props) => {
   const [authState, setAuthState] = createStore(initialAuthState);
 
   const authEvent = {
-    setCurrentUser: (user: User) => {
+    setCurrentUser: (user: CurrentUser) => {
       setAuthState("currentUser", user);
       setAuthState("isAuthenticated", true);
     },

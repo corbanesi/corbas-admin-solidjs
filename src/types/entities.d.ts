@@ -1,9 +1,9 @@
-type User = {
+type CurrentUser = {
   name: string;
   email: string;
 };
 
-type Person = {
+type User = {
   firstName: string;
   lastName: string;
   age: number;

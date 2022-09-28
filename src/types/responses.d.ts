@@ -3,6 +3,6 @@ type CurrentUserResponse = {
   email: string;
 };
 
-type PersonResponse = {
-  data: Person[];
+type UserResponse = {
+  data: User[];
 };

@@ -4,10 +4,10 @@ import {
   flexRender,
   getCoreRowModel,
 } from "@tanstack/solid-table";
-import { createSignal, For, Suspense, VoidComponent } from "solid-js";
+import { For, Suspense, VoidComponent } from "solid-js";
 import CorbasLoading from "./corbas.loading";
 
-const defaultColumns: ColumnDef<Person>[] = [
+const defaultColumns: ColumnDef<User>[] = [
   {
     accessorKey: "firstName",
     header: "First Name",
@@ -34,11 +34,11 @@ const defaultColumns: ColumnDef<Person>[] = [
   },
 ];
 
-type CorbasPersonTableProps = {
-  data: Person[] | undefined;
+type CorbasUserTableProps = {
+  data: User[] | undefined;
 };
 
-const CorbasPersonTable: VoidComponent<CorbasPersonTableProps> = (props) => {
+const CorbasUserTable: VoidComponent<CorbasUserTableProps> = (props) => {
   const table = createSolidTable({
     get data() {
       return props.data || [];
@@ -101,4 +101,4 @@ const CorbasPersonTable: VoidComponent<CorbasPersonTableProps> = (props) => {
   );
 };
 
-export default CorbasPersonTable;
+export default CorbasUserTable;

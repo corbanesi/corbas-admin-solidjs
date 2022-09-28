@@ -1,9 +1,9 @@
-import { CorbasCard, CorbasPersonTable } from "@/components/atomic";
-import { apiGetPerson } from "@/services/person.service";
+import { CorbasCard, CorbasUserTable } from "@/components/atomic";
+import { apiGetUsers } from "@/services/user.service";
 import { Component, createResource } from "solid-js";
 
-const fetchPeople = async (): Promise<Person[]> => {
-  const response = await apiGetPerson();
+const fetchPeople = async (): Promise<User[]> => {
+  const response = await apiGetUsers();
   return response.data;
 };
 
@@ -19,7 +19,7 @@ const HomePage: Component = () => {
         <CorbasCard />
       </div>
       <div class="my-4 px-4">
-        <CorbasPersonTable data={data()} />
+        <CorbasUserTable data={data()} />
       </div>
     </>
   );
