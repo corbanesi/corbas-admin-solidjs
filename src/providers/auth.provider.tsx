@@ -1,8 +1,5 @@
-import { apiCurrentUser } from "@/services/auth.service";
-import { useLocation, useNavigate } from "@solidjs/router";
-import { createContext, onMount, ParentComponent, useContext } from "solid-js";
+import { createContext, ParentComponent, useContext } from "solid-js";
 import { createStore } from "solid-js/store";
-import toast from "solid-toast";
 
 interface IAuthStateContext {
   isAuthenticated: boolean;

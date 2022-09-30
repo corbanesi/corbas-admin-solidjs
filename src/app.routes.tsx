@@ -1,9 +1,7 @@
 import { Navigate, Outlet, Route, Routes } from "@solidjs/router";
 import { Component, JSX, lazy, Show } from "solid-js";
 
-import {
-  useAuthStateProvider,
-} from "./providers/auth.provider";
+import { useAuthStateProvider } from "./providers/auth.provider";
 
 const DashboardLayout = lazy(() => import("./layouts/dashboard.layout"));
 const SignInPage = lazy(() => import("./pages/signIn.page"));
@@ -32,7 +30,10 @@ interface ProtectedProps {
 export const AppRoutes: Component = () => {
   return (
     <Routes>
-      <ProtectedRoute redirect={RoutesEnum.SIGN_IN_PAGE}>
+      <ProtectedRoute
+        redirect={RoutesEnum.SIGN_IN_PAGE}
+        path={RoutesEnum.HOME_PAGE}
+      >
         <Route path={RoutesEnum.HOME_PAGE} component={DashboardLayout}>
           <Route path={RoutesEnum.HOME_PAGE} component={HomePage}></Route>
           <Route path={RoutesEnum.ABOUT_PAGE} component={AboutPage}></Route>

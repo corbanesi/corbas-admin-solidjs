@@ -8,8 +8,7 @@ const fetchPeople = async (): Promise<User[]> => {
 };
 
 const HomePage: Component = () => {
-  const [data, { mutate }] = createResource(fetchPeople);
-
+  const [data] = createResource(fetchPeople);
   return (
     <>
       <div class="flex flex-row flex-wrap justify-center gap-4">
