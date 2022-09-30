@@ -1,11 +1,11 @@
 import { CorbasButton, CorbasInput } from "@/components/atomic";
 import { LoadingIcon, LockIcon } from "@/components/icons";
-import { RoutesEnum } from "@/routes";
 import { useLogin } from "@composables/auth/useLogin";
 import { useAuthStateProvider } from "@/providers/auth.provider";
 import { useNavigate } from "@solidjs/router";
 import { Component, onMount } from "solid-js";
 import { createStore } from "solid-js/store";
+import { RoutesEnum } from "@/app.routes";
 
 const SignInPage: Component = () => {
   const authState = useAuthStateProvider();
@@ -52,6 +52,7 @@ const SignInPage: Component = () => {
                 placeholder="E-mail address"
                 required
                 onInput={(e) => setForm("email", e.currentTarget.value)}
+                value={form.email}
               />
             </div>
             <div class="space-y-4">
@@ -63,6 +64,7 @@ const SignInPage: Component = () => {
                 placeholder="Password"
                 required
                 onInput={(e) => setForm("password", e.currentTarget.value)}
+                value={form.password}
               />
             </div>
             <div>

@@ -52,7 +52,13 @@ const CorbasUserTable: VoidComponent<CorbasUserTableProps> = (props) => {
       <div class="not-prose relative overflow-hidden rounded-xl bg-white/30 leading-5 shadow-xl shadow-black/5 ring-1 ring-slate-200">
         <div class="relative overflow-auto rounded-xl">
           <div class="my-8 overflow-hidden">
-            <ErrorBoundary fallback={<div class="w-full flex justify-center text-slate-700">Error TODO</div>}>
+            <ErrorBoundary
+              fallback={
+                <div class="flex w-full justify-center text-slate-700">
+                  Error TODO
+                </div>
+              }
+            >
               <Suspense fallback={<CorbasLoading />}>
                 <table class="w-full table-auto border-collapse text-sm">
                   <thead>
@@ -65,9 +71,9 @@ const CorbasUserTable: VoidComponent<CorbasUserTableProps> = (props) => {
                                 {header.isPlaceholder
                                   ? null
                                   : flexRender(
-                                    header.column.columnDef.header,
-                                    header.getContext()
-                                  )}
+                                      header.column.columnDef.header,
+                                      header.getContext()
+                                    )}
                               </th>
                             )}
                           </For>

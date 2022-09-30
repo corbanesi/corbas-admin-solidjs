@@ -1,7 +1,7 @@
 import type { Component } from "solid-js";
 
-const NotFound: Component = () => {
+const NotFoundPage: Component = () => {
   return <div>Not Found</div>;
 };
 
-export default NotFound;
+export default NotFoundPage;

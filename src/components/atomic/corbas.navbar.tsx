@@ -1,5 +1,5 @@
+import { RoutesEnum } from "@/app.routes";
 import { useAuthStateProvider } from "@/providers/auth.provider";
-import { RoutesEnum } from "@/routes";
 import { useLogout } from "@composables/auth/useLogout";
 import { NavLink } from "@solidjs/router";
 import {

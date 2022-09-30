@@ -9,7 +9,7 @@ body,
 }
 
 body {
-  @apply bg-gradient-to-tr from-sky-400 to-violet-400;
+  @apply bg-sky-400;
 }
 
 .nav-item.active {

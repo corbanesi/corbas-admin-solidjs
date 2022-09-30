@@ -1,9 +1,9 @@
-import { RoutesEnum } from "@/routes";
 import { useAuthEventProvider } from "@/providers/auth.provider";
 import { useNavigate } from "@solidjs/router";
 import { apiSignOut } from "@/services/auth.service";
 import toast from "solid-toast";
 import { createSignal } from "solid-js";
+import { RoutesEnum } from "@/app.routes";
 
 export const useLogout = () => {
   const [isLoading, setLoading] = createSignal(false);

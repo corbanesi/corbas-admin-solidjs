@@ -1,9 +1,9 @@
 import { useAuthEventProvider } from "@/providers/auth.provider";
 import { useNavigate } from "@solidjs/router";
-import { RoutesEnum } from "@/routes";
 import { createSignal } from "solid-js";
 import { apiCurrentUser, apiSignIn } from "@/services/auth.service";
 import toast from "solid-toast";
+import { RoutesEnum } from "@/app.routes";
 
 export const useLogin = () => {
   const [isLoading, setLoading] = createSignal(false);
